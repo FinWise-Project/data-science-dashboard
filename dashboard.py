@@ -100,11 +100,15 @@ with tab1:
             ax.plot(trend_df['month_year'], trend_df['expense'], marker='o', color='#E74C3C', label='Pengeluaran (Expense)', linewidth=2.5)
         
         ax.set_title("Perbandingan Tren Bulanan Pemasukan vs Pengeluaran", fontsize=14, fontweight='bold', pad=15)
-        ax.set_xlabel("Bulan", fontsize=12)
+        
+        ax.set_xlabel("Bulan", fontsize=12, labelpad=15) 
         ax.set_ylabel("Total Jumlah (Rupiah)", fontsize=12)
         ax.grid(axis='y', linestyle='--', alpha=0.7)
         plt.xticks(rotation=45)
         ax.legend(fontsize=11)
+        
+        plt.tight_layout() 
+        
         st.pyplot(fig)
     else:
         st.info("Tidak ada data pada rentang waktu terpilih.")
